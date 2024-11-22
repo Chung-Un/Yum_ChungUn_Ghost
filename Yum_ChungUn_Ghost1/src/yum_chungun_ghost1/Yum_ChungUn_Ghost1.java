@@ -11,54 +11,109 @@ import java.util.Scanner;
  * @author chung
  */
 public class Yum_ChungUn_Ghost1 {
+    
+   static Player player = new Player();
 
-    /**
-     * @param args the command line arguments
-     */
+    
+   public static int validarUsuario(String usuarioBusqueda,String[][] usuariosInfo ){
+    int posicionUsuario=-1;
+    
+    for(int i=0;i<player.getUsuariosInfo()[0].length;i++){
+    if(usuarioBusqueda.equals(player.getUsuariosInfo()[0][i])){
+    posicionUsuario = i;
+    break;
+    }
+    }
+    return posicionUsuario;  
+    }
+    
+    public static void validarPassword(String passwordBusqueda){
+    boolean passwordValida;
+    passwordValida = (passwordBusqueda.length()==8);
+    
+    if(passwordValida){
+    System.out.println("Password valida\nCreacion de perfil exitosa.");
+    player.setPassword(passwordBusqueda);
+    }
+    else{
+    System.out.println("Esa password no cumple con el requisito de 8 caracteres");
+    }   
+    
+    }
+   
+   
+    
     public static void main(String[] args) {
      Scanner entrada = new Scanner(System.in);
-        int opcionMenuInicio=0, largoTemporal=10;
+        int opcionMenuInicio=0, posicionUsuario=0;
         String usuarioBusqueda, passwordBusqueda="";
-        String[][] usuariosInfo = {{"chungun23","pollochuco24"},{"mcr4ever","pollochu"}};
         
-        do{
-        System.out.println("**Bienvenido a Ghost**\n---Menu de inicio---\nDigite el numero de la opcion que desea acceder\n1.Login\n2.Crear player\n3.Salir");
+        
+        
+        System.out.println("**Bienvenido a Ghost**\n===========Menu de Inicio===========\nDigite el numero de la opcion que desea acceder\n1.Login\n2.Crear player\n3.Salir");
         opcionMenuInicio = entrada.nextInt();
        
-        
         
         switch(opcionMenuInicio){
         
             case 1:
                 System.out.println("--->Login\nIngrese su usuario:");
-                usuarioBusqueda=entrada.next();
+                usuarioBusqueda=entrada.nextLine();
                 
-                for(int i=0; i<=usuariosInfo[0].length;i++){
+                 posicionUsuario = validarUsuario(usuarioBusqueda,player.getUsuariosInfo());
                 
-                if(usuarioBusqueda.equals(usuariosInfo[0][i])){
-                System.out.println("Usuario encontrado, ingrese su password:");
+                if(posicionUsuario>=0){
+                player.setUsuario(usuarioBusqueda);
+                System.out.println("Usuario encontrado\nIngresa tu password:");
                 passwordBusqueda = entrada.next();
-                }
-                else if(!usuarioBusqueda.equals(usuariosInfo[0][i])){
-                System.out.println("Usuario no encontrado");
-               
-                }
                 
-                if(passwordBusqueda.equals(usuariosInfo[1][i])){
-                System.out.println("Bienvenido " + usuarioBusqueda + " :D");
-                }}
-               
+                if(passwordBusqueda.equals(player.getUsuariosInfo()[1][posicionUsuario])){
+                player.setPassword(passwordBusqueda);
+                System.out.println("Bienvenido " + usuarioBusqueda);
                 }
-                
-               
+                else{
+                System.out.println("Password incorrecta");
+                }
+                }
+                else{
+                System.out.println("Usuario no encontrado.");
+                }
                 break;
+                
+                
+            case 2: 
+                
+                System.out.println("-->Crear Player\nIngrese un nombre de usuario:");
+                usuarioBusqueda = entrada.next();
+                posicionUsuario = validarUsuario(usuarioBusqueda,player.getUsuariosInfo());
+                
+                if(posicionUsuario==-1){
+                player.setUsuario(usuarioBusqueda);
+                System.out.println("Ingrese una password de 8 caracteres:");
+                passwordBusqueda = entrada.next(); 
+                
+                validarPassword(passwordBusqueda);
+                        
+                }
+                else{
+                System.out.println("El usuario que ha seleccionado ya esta en uso.");
+                }
+                break;
+                
+            case 3:
+                System.out.println("Hasta luego...");
+                System.exit(0);
+            }
+                
+              
+        System.out.println("===========Menu principal===========\n1.Jugar\n2.Configuracion\n3.Reportes\n4.Mi perfil\n5.Cerrar sesion");
+                
         
                 
                 
         
         
         
-        }while(opcionMenuInicio !=3 );
         
         }}
         
