@@ -45,26 +45,35 @@ public class Yum_ChungUn_Ghost1 {
     
     public static void main(String[] args) {
      Scanner entrada = new Scanner(System.in);
-        int opcionMenuInicio=0, posicionUsuario=0;
+        int opcionUsuario=0, posicionUsuario=0;
         String usuarioBusqueda, passwordBusqueda="";
         
         
         
         System.out.println("**Bienvenido a Ghost**\n===========Menu de Inicio===========\nDigite el numero de la opcion que desea acceder\n1.Login\n2.Crear player\n3.Salir");
-        opcionMenuInicio = entrada.nextInt();
+        opcionUsuario = entrada.nextInt();
        
         
-        switch(opcionMenuInicio){
+        switch(opcionUsuario){
         
             case 1:
+                
                 System.out.println("--->Login\nIngrese su usuario:");
-                usuarioBusqueda=entrada.nextLine();
+                usuarioBusqueda=entrada.next();
                 
                  posicionUsuario = validarUsuario(usuarioBusqueda,player.getUsuariosInfo());
                 
                 if(posicionUsuario>=0){
                 player.setUsuario(usuarioBusqueda);
-                System.out.println("Usuario encontrado\nIngresa tu password:");
+                System.out.println("Usuario encontrado");
+                
+                }
+                else{
+                System.out.println("Usuario no encontrado.");
+                
+                }
+                
+                System.out.println("Ingrese su password:");
                 passwordBusqueda = entrada.next();
                 
                 if(passwordBusqueda.equals(player.getUsuariosInfo()[1][posicionUsuario])){
@@ -73,17 +82,14 @@ public class Yum_ChungUn_Ghost1 {
                 }
                 else{
                 System.out.println("Password incorrecta");
-                }
-                }
-                else{
-                System.out.println("Usuario no encontrado.");
+                
                 }
                 break;
                 
                 
             case 2: 
                 
-                System.out.println("-->Crear Player\nIngrese un nombre de usuario:");
+                System.out.println("-->Crear Player\nIngrese un nombre de usuario sin espacios:");
                 usuarioBusqueda = entrada.next();
                 posicionUsuario = validarUsuario(usuarioBusqueda,player.getUsuariosInfo());
                 
@@ -107,7 +113,27 @@ public class Yum_ChungUn_Ghost1 {
                 
               
         System.out.println("===========Menu principal===========\n1.Jugar\n2.Configuracion\n3.Reportes\n4.Mi perfil\n5.Cerrar sesion");
+        opcionUsuario = entrada.nextInt();
+        entrada.nextLine();
+        
+        switch(opcionUsuario){
+        
+            case 1:
+                break;
                 
+            case 2:
+                break;
+                
+            case 3:
+                break;
+                
+            case 4:
+                break;
+                
+            case 5:
+                break;
+        
+         }
         
                 
                 
