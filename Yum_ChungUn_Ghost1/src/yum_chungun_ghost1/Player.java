@@ -11,7 +11,16 @@ package yum_chungun_ghost1;
 public class Player {
  String usuario,password;
  String[] resumenPartidas= new String[9];
- String[][] usuariosInfo = {{"chungun23","pollochuco24"},{"mcr4ever","pollochu"}};
+ String[][] usuariosInfo = {{"chungun23","pollochuco24","mellzx",""},{"mcr4ever","pollochu","gatos001",""}};
+ int [] usuariosPuntos = {10,7,4,0};
+
+    public int[] getUsuariosPuntos() {
+        return usuariosPuntos;
+    }
+
+    public void setUsuariosPuntos(int[] usuariosPuntos) {
+        this.usuariosPuntos = usuariosPuntos;
+    }
 
     public String[][] getUsuariosInfo() {
         return usuariosInfo;

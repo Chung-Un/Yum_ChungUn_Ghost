@@ -4,6 +4,7 @@
  */
 package yum_chungun_ghost1;
 
+import java.util.HashSet;
 import java.util.Scanner;
 
 /**
@@ -41,12 +42,29 @@ public class Yum_ChungUn_Ghost1 {
     
     }
    
+    public static void rankingJugadores(){
+    int temp;
+    
+    for(int i=0 ; i< player.getUsuariosPuntos().length;i++){
+    for(int x=1; x < player.getUsuariosPuntos().length;x++){
+        if(player.getUsuariosPuntos()[x-1]>= player.getUsuariosPuntos()[x]){
+        temp= player.getUsuariosPuntos()[x];
+        player.getUsuariosPuntos()[x] = player.getUsuariosPuntos()[x-1];
+        player.getUsuariosPuntos()[x-1] = temp;
+    }
+    }
+    }
+    
+    
+    
+    
+    }
    
     
     public static void main(String[] args) {
      Scanner entrada = new Scanner(System.in);
         int opcionUsuario=0, posicionUsuario=0;
-        String usuarioBusqueda, passwordBusqueda="";
+        String usuarioBusqueda="", passwordBusqueda="";
         
         
         
@@ -95,6 +113,7 @@ public class Yum_ChungUn_Ghost1 {
                 
                 if(posicionUsuario==-1){
                 player.setUsuario(usuarioBusqueda);
+                    
                 System.out.println("Ingrese una password de 8 caracteres:");
                 passwordBusqueda = entrada.next(); 
                 
@@ -125,12 +144,38 @@ public class Yum_ChungUn_Ghost1 {
                 break;
                 
             case 3:
+                System.out.println("-->Reportes\n1.Descripcion de mis ultimos 10 juegos\n2.Ranking de jugadores");
+                opcionUsuario = entrada.nextInt();
+                entrada.nextLine();
+                
+                switch(opcionUsuario){
+                
+                    case 1:
+                       System.out.println("El resumen de las ultimas 10 partidas de: " + player.getUsuario());
+                     
+                       for (String i : player.getResumenPartidas()){
+                           System.out.println(i);
+                       }
+                       break;
+                       
+                    case 2:
+                    System.out.println("El ranking de jugadores actuales es:");  
+                }
+                
+               
+                
                 break;
                 
             case 4:
+                System.out.println("-->Mi Perfil\n1.Ver mis datos\n2.2.Cambiar password\n3.Eliminar cuenta\n4.Regresar al menu principal");
+                
+                
                 break;
                 
             case 5:
+                
+                
+                
                 break;
         
          }
