@@ -199,12 +199,21 @@ public class loginMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         String passwordBusqueda = loginPassword.getText();
         
-        if(passwordBusqueda.equals(usuariosInfo[1][posicionUsuario])){
+        
+        if(posicionUsuario == -1){
+                JOptionPane.showMessageDialog(null, "Aun no ha validado ningun usuario.");
+        }
+        else if(passwordBusqueda.equals(usuariosInfo[1][posicionUsuario])){
                 
                 JOptionPane.showMessageDialog(null,"Bienvenido " + usuarioBusqueda);
                 this.dispose();
+                
+                crearplayerMenu crear = new crearplayerMenu();
+                crear.setVisible(true);
                 }
-                else{
+       
+        
+        else {
                 JOptionPane.showMessageDialog(null, "Password incorrecta, redirigiengo al menu de incio..");
                 this.dispose();
                 pantallaInicio.setVisible(true);

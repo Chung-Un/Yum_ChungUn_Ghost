@@ -16,6 +16,9 @@ public class crearplayerMenu extends javax.swing.JFrame {
         initComponents();
     }
 
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -25,21 +28,197 @@ public class crearplayerMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        usuarioRegistro = new javax.swing.JTextField();
+        loginUsuario = new javax.swing.JTextField();
+        tituloCrearplayer = new javax.swing.JTextField();
+        usuarioCrear = new javax.swing.JTextField();
+        crearUsuario = new javax.swing.JTextField();
+        btncrearPassword = new javax.swing.JButton();
+        passwordCrear = new javax.swing.JTextField();
+        crearUsuario1 = new javax.swing.JTextField();
+        btncrearUsuario1 = new javax.swing.JButton();
+
+        usuarioRegistro.setBackground(new java.awt.Color(0, 0, 0));
+        usuarioRegistro.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        usuarioRegistro.setForeground(new java.awt.Color(255, 255, 255));
+        usuarioRegistro.setText("Ingrese sus datos de Ghost");
+        usuarioRegistro.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        usuarioRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usuarioRegistroActionPerformed(evt);
+            }
+        });
+
+        loginUsuario.setText("Mi usuario de ghost");
+        loginUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginUsuarioActionPerformed(evt);
+            }
+        });
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        tituloCrearplayer.setBackground(new java.awt.Color(0, 0, 0));
+        tituloCrearplayer.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        tituloCrearplayer.setForeground(new java.awt.Color(255, 255, 255));
+        tituloCrearplayer.setText("Crear player");
+        tituloCrearplayer.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        tituloCrearplayer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tituloCrearplayerActionPerformed(evt);
+            }
+        });
+
+        usuarioCrear.setBackground(new java.awt.Color(0, 0, 0));
+        usuarioCrear.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        usuarioCrear.setForeground(new java.awt.Color(255, 255, 255));
+        usuarioCrear.setText("Ingrese un nombre de usuario sin espacios");
+        usuarioCrear.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        usuarioCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usuarioCrearActionPerformed(evt);
+            }
+        });
+
+        crearUsuario.setText("Mi password de ghost");
+        crearUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crearUsuarioActionPerformed(evt);
+            }
+        });
+
+        btncrearPassword.setBackground(new java.awt.Color(0, 0, 0));
+        btncrearPassword.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        btncrearPassword.setForeground(new java.awt.Color(255, 255, 255));
+        btncrearPassword.setText("Crea mi password!");
+        btncrearPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncrearPasswordActionPerformed(evt);
+            }
+        });
+
+        passwordCrear.setBackground(new java.awt.Color(0, 0, 0));
+        passwordCrear.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        passwordCrear.setForeground(new java.awt.Color(255, 255, 255));
+        passwordCrear.setText("Ingrese una password de 8 caracteres");
+        passwordCrear.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        passwordCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordCrearActionPerformed(evt);
+            }
+        });
+
+        crearUsuario1.setText("Mi usuario de ghost");
+        crearUsuario1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crearUsuario1ActionPerformed(evt);
+            }
+        });
+
+        btncrearUsuario1.setBackground(new java.awt.Color(0, 0, 0));
+        btncrearUsuario1.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        btncrearUsuario1.setForeground(new java.awt.Color(255, 255, 255));
+        btncrearUsuario1.setText("Crea mi usuario!");
+        btncrearUsuario1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncrearUsuario1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(crearUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(161, 161, 161))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addComponent(btncrearUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(passwordCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(crearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(158, 158, 158))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(165, 165, 165)
+                        .addComponent(tituloCrearplayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(usuarioCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(138, 138, 138)
+                        .addComponent(btncrearPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(tituloCrearplayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(usuarioCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(crearUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btncrearUsuario1)
+                .addGap(18, 18, 18)
+                .addComponent(passwordCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(crearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btncrearPassword)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tituloCrearplayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tituloCrearplayerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tituloCrearplayerActionPerformed
+
+    private void usuarioRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioRegistroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usuarioRegistroActionPerformed
+
+    private void usuarioCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioCrearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usuarioCrearActionPerformed
+
+    private void loginUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginUsuarioActionPerformed
+
+    private void crearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_crearUsuarioActionPerformed
+
+    private void btncrearPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncrearPasswordActionPerformed
+        // TODO add your handling code here
+       
+
+    }//GEN-LAST:event_btncrearPasswordActionPerformed
+
+    private void passwordCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordCrearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordCrearActionPerformed
+
+    private void crearUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearUsuario1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_crearUsuario1ActionPerformed
+
+    private void btncrearUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncrearUsuario1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btncrearUsuario1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,5 +256,14 @@ public class crearplayerMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btncrearPassword;
+    private javax.swing.JButton btncrearUsuario1;
+    private javax.swing.JTextField crearUsuario;
+    private javax.swing.JTextField crearUsuario1;
+    private javax.swing.JTextField loginUsuario;
+    private javax.swing.JTextField passwordCrear;
+    private javax.swing.JTextField tituloCrearplayer;
+    private javax.swing.JTextField usuarioCrear;
+    private javax.swing.JTextField usuarioRegistro;
     // End of variables declaration//GEN-END:variables
 }
