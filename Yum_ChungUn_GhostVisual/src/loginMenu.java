@@ -8,28 +8,20 @@
  * @author chung
  */
 
+import java.util.HashSet;
 import javax.swing.*;
 
 public class loginMenu extends javax.swing.JFrame {
 
-    String[][] usuariosInfo = {{"chungun23","pollochuco24","mellzx","juanCarlos","spookyscaryskeleton","ghostmaster",""},
-                                    {"mcr4ever","pollochu","gatos001","perry123","hallowee","soymejor",""}, 
-                                    {"10","13","7","2","23","60",""}};
+String[][] usuariosInfo = {{"chungun23","pollochuco24","mellzx","juanCarlos","spookyscaryskeleton","ghostmaster",},
+                                    {"mcr4ever","pollochu","gatos001","perry123","hallowee","soymejor",}, 
+                                    {"10","13","7","2","23","60",}};
     
     
     public static int posicionUsuario = -1;
     public String usuarioBusqueda;
-    
-    public static int validar (String[][] usuariosInfo, String usuarioBusqueda){
-        for(int i=0;i<usuariosInfo[0].length;i++){
-        if(usuarioBusqueda.equals(usuariosInfo[0][i])){
-        posicionUsuario = i;
-        }
-        
-    }
-    return posicionUsuario;
-    }
-    
+    player player = new player();
+    funciones funciones = new funciones();
     pantallaInicio pantallaInicio = new pantallaInicio();
     /**
      * Creates new form loginMenu
@@ -125,20 +117,20 @@ public class loginMenu extends javax.swing.JFrame {
                 .addComponent(loginPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(164, 164, 164)
-                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(usuarioRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(69, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addComponent(btnOkUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnOkPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(92, 92, 92))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(usuarioRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,10 +157,13 @@ public class loginMenu extends javax.swing.JFrame {
         // TODO add your handling code here
         usuarioBusqueda = loginUsuario.getText();  
         
-        validar(usuariosInfo,usuarioBusqueda);
+        funciones.validarPosicion(usuariosInfo,usuarioBusqueda);
         
         if(posicionUsuario>=0){
             JOptionPane.showMessageDialog(null, "Usuario encontrado!");
+            player.setUsuario(usuarioBusqueda);
+            
+            
              
             }
         else{
@@ -178,10 +173,6 @@ public class loginMenu extends javax.swing.JFrame {
             }
         
     }//GEN-LAST:event_btnOkUsuarioActionPerformed
-
-    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_loginActionPerformed
 
     private void usuarioRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioRegistroActionPerformed
         // TODO add your handling code here:
@@ -204,12 +195,11 @@ public class loginMenu extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Aun no ha validado ningun usuario.");
         }
         else if(passwordBusqueda.equals(usuariosInfo[1][posicionUsuario])){
-                
+                player.setPassword(passwordBusqueda);
                 JOptionPane.showMessageDialog(null,"Bienvenido " + usuarioBusqueda);
                 this.dispose();
                 
-                crearplayerMenu crear = new crearplayerMenu();
-                crear.setVisible(true);
+                
                 }
        
         
@@ -220,6 +210,10 @@ public class loginMenu extends javax.swing.JFrame {
                 }
         
     }//GEN-LAST:event_btnOkPasswordActionPerformed
+
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginActionPerformed
 
     /**
      * @param args the command line arguments

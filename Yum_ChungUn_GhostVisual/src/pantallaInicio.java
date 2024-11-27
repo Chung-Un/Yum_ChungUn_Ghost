@@ -1,3 +1,5 @@
+
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -9,13 +11,21 @@
  */
 
 public class pantallaInicio extends javax.swing.JFrame {
-
-    /**
-     * Creates new form pantallaInicio
-     */
+    
+    
     public pantallaInicio() {
         initComponents();
     }
+
+    
+    /**
+     * Creates new form loginMenu
+     */
+   
+    /**
+     * Creates new form pantallaInicio
+     */
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,11 +37,11 @@ public class pantallaInicio extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        tituloJuego = new javax.swing.JTextField();
-        tituloMenuInicio = new javax.swing.JTextField();
+        labelTitulo = new javax.swing.JLabel();
+        labelMenuinicio = new javax.swing.JLabel();
         btnLogin = new javax.swing.JButton();
         btncrearPlayer = new javax.swing.JButton();
-        btnsalir = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -40,31 +50,13 @@ public class pantallaInicio extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
 
-        tituloJuego.setBackground(new java.awt.Color(0, 0, 0));
-        tituloJuego.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        tituloJuego.setForeground(new java.awt.Color(255, 255, 255));
-        tituloJuego.setText("Ghost");
-        tituloJuego.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        tituloJuego.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tituloJuegoActionPerformed(evt);
-            }
-        });
+        labelTitulo.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        labelTitulo.setText("Ghost");
 
-        tituloMenuInicio.setBackground(new java.awt.Color(0, 0, 0));
-        tituloMenuInicio.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        tituloMenuInicio.setForeground(new java.awt.Color(255, 255, 255));
-        tituloMenuInicio.setText("Menu de inicio");
-        tituloMenuInicio.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        tituloMenuInicio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tituloMenuInicioActionPerformed(evt);
-            }
-        });
+        labelMenuinicio.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
+        labelMenuinicio.setText("Menu de Inicio");
 
-        btnLogin.setBackground(new java.awt.Color(0, 0, 0));
-        btnLogin.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
+        btnLogin.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
         btnLogin.setText("Login");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,23 +64,19 @@ public class pantallaInicio extends javax.swing.JFrame {
             }
         });
 
-        btncrearPlayer.setBackground(new java.awt.Color(0, 0, 0));
-        btncrearPlayer.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        btncrearPlayer.setForeground(new java.awt.Color(255, 255, 255));
-        btncrearPlayer.setText("Crear player");
+        btncrearPlayer.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        btncrearPlayer.setText("Crear Player");
         btncrearPlayer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btncrearPlayerActionPerformed(evt);
             }
         });
 
-        btnsalir.setBackground(new java.awt.Color(0, 0, 0));
-        btnsalir.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        btnsalir.setForeground(new java.awt.Color(255, 255, 255));
-        btnsalir.setText("Salir");
-        btnsalir.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnsalirActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
 
@@ -97,65 +85,61 @@ public class pantallaInicio extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
+                .addGap(100, 100, 100)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tituloMenuInicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelMenuinicio, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btncrearPlayer)
-                            .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(34, 34, 34))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btncrearPlayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(22, 22, 22))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(tituloJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(64, 64, 64)))
-                .addContainerGap(87, Short.MAX_VALUE))
+                        .addComponent(labelTitulo)
+                        .addGap(58, 58, 58)))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(tituloJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(labelTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tituloMenuInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelMenuinicio)
                 .addGap(18, 18, 18)
                 .addComponent(btnLogin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btncrearPlayer)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnsalir)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addComponent(btncrearPlayer)
+                .addGap(18, 18, 18)
+                .addComponent(btnSalir)
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void tituloJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tituloJuegoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tituloJuegoActionPerformed
-
-    private void tituloMenuInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tituloMenuInicioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tituloMenuInicioActionPerformed
-
-    private void btncrearPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncrearPlayerActionPerformed
-        // TODO add your handling code here:
-        crearplayerMenu crearPlayer = new crearplayerMenu();
-        crearPlayer.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btncrearPlayerActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
         loginMenu login = new loginMenu();
         login.setVisible(true);
         this.setVisible(false);
+        
     }//GEN-LAST:event_btnLoginActionPerformed
 
-    private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
+    private void btncrearPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncrearPlayerActionPerformed
         // TODO add your handling code here:
-       System.exit(0);
-    }//GEN-LAST:event_btnsalirActionPerformed
+        crearplayerMenu crearPlayer = new crearplayerMenu();
+        crearPlayer.setVisible(true);
+        this.setVisible(false);
+        
+ 
+
+    }//GEN-LAST:event_btncrearPlayerActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,10 +178,10 @@ public class pantallaInicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JButton btncrearPlayer;
-    private javax.swing.JButton btnsalir;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JTextField tituloJuego;
-    private javax.swing.JTextField tituloMenuInicio;
+    private javax.swing.JLabel labelMenuinicio;
+    private javax.swing.JLabel labelTitulo;
     // End of variables declaration//GEN-END:variables
 }

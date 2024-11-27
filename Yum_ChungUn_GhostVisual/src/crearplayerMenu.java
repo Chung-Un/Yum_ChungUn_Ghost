@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -16,8 +19,9 @@ public class crearplayerMenu extends javax.swing.JFrame {
         initComponents();
     }
 
-    
-    
+   static player player = new player();
+   pantallaInicio pantallaInicio = new pantallaInicio();
+   funciones funciones = new funciones();
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,11 +36,10 @@ public class crearplayerMenu extends javax.swing.JFrame {
         loginUsuario = new javax.swing.JTextField();
         tituloCrearplayer = new javax.swing.JTextField();
         usuarioCrear = new javax.swing.JTextField();
-        crearUsuario = new javax.swing.JTextField();
-        btncrearPassword = new javax.swing.JButton();
+        fieldcrearPassword = new javax.swing.JTextField();
         passwordCrear = new javax.swing.JTextField();
-        crearUsuario1 = new javax.swing.JTextField();
-        btncrearUsuario1 = new javax.swing.JButton();
+        fieldcrearUsuario = new javax.swing.JTextField();
+        btncrearPerfil = new javax.swing.JButton();
 
         usuarioRegistro.setBackground(new java.awt.Color(0, 0, 0));
         usuarioRegistro.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
@@ -80,20 +83,10 @@ public class crearplayerMenu extends javax.swing.JFrame {
             }
         });
 
-        crearUsuario.setText("Mi password de ghost");
-        crearUsuario.addActionListener(new java.awt.event.ActionListener() {
+        fieldcrearPassword.setText("Mi password de ghost");
+        fieldcrearPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                crearUsuarioActionPerformed(evt);
-            }
-        });
-
-        btncrearPassword.setBackground(new java.awt.Color(0, 0, 0));
-        btncrearPassword.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        btncrearPassword.setForeground(new java.awt.Color(255, 255, 255));
-        btncrearPassword.setText("Crea mi password!");
-        btncrearPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btncrearPasswordActionPerformed(evt);
+                fieldcrearPasswordActionPerformed(evt);
             }
         });
 
@@ -108,20 +101,20 @@ public class crearplayerMenu extends javax.swing.JFrame {
             }
         });
 
-        crearUsuario1.setText("Mi usuario de ghost");
-        crearUsuario1.addActionListener(new java.awt.event.ActionListener() {
+        fieldcrearUsuario.setText("Mi usuario de ghost");
+        fieldcrearUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                crearUsuario1ActionPerformed(evt);
+                fieldcrearUsuarioActionPerformed(evt);
             }
         });
 
-        btncrearUsuario1.setBackground(new java.awt.Color(0, 0, 0));
-        btncrearUsuario1.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        btncrearUsuario1.setForeground(new java.awt.Color(255, 255, 255));
-        btncrearUsuario1.setText("Crea mi usuario!");
-        btncrearUsuario1.addActionListener(new java.awt.event.ActionListener() {
+        btncrearPerfil.setBackground(new java.awt.Color(0, 0, 0));
+        btncrearPerfil.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        btncrearPerfil.setForeground(new java.awt.Color(255, 255, 255));
+        btncrearPerfil.setText("Crea mi perfil!");
+        btncrearPerfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btncrearUsuario1ActionPerformed(evt);
+                btncrearPerfilActionPerformed(evt);
             }
         });
 
@@ -131,21 +124,8 @@ public class crearplayerMenu extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(crearUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(fieldcrearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(161, 161, 161))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(btncrearUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(passwordCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(crearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(158, 158, 158))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -155,8 +135,16 @@ public class crearplayerMenu extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addComponent(usuarioCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
-                        .addComponent(btncrearPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(135, 135, 135)
+                        .addComponent(btncrearPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(passwordCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(fieldcrearPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(110, 110, 110)))))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -167,16 +155,14 @@ public class crearplayerMenu extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(usuarioCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(crearUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(fieldcrearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btncrearUsuario1)
-                .addGap(18, 18, 18)
                 .addComponent(passwordCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(crearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btncrearPassword)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addComponent(fieldcrearPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btncrearPerfil)
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         pack();
@@ -198,27 +184,58 @@ public class crearplayerMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_loginUsuarioActionPerformed
 
-    private void crearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearUsuarioActionPerformed
+    private void fieldcrearPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldcrearPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_crearUsuarioActionPerformed
-
-    private void btncrearPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncrearPasswordActionPerformed
-        // TODO add your handling code here
-       
-
-    }//GEN-LAST:event_btncrearPasswordActionPerformed
+    }//GEN-LAST:event_fieldcrearPasswordActionPerformed
 
     private void passwordCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordCrearActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordCrearActionPerformed
 
-    private void crearUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearUsuario1ActionPerformed
+    private void fieldcrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldcrearUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_crearUsuario1ActionPerformed
+    }//GEN-LAST:event_fieldcrearUsuarioActionPerformed
 
-    private void btncrearUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncrearUsuario1ActionPerformed
+    private void btncrearPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncrearPerfilActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btncrearUsuario1ActionPerformed
+        String usuarioBusqueda,passwordBusqueda; 
+        int posicionUsuario=0;
+        boolean passwordValida=true;
+        usuarioBusqueda = fieldcrearUsuario.getText();
+        passwordBusqueda = fieldcrearPassword.getText();
+        
+        funciones.validarPosicion(player.getUsuariosInfo(),usuarioBusqueda);
+        funciones.validarPassword(passwordBusqueda);
+        
+        if(posicionUsuario==-1 && passwordValida){
+        funciones.crearPlayer(player,usuarioBusqueda,passwordBusqueda);
+        player.setUsuario(usuarioBusqueda);
+        player.setPassword(passwordBusqueda);
+        this.dispose();
+        }
+        else if(posicionUsuario>-1){
+        JOptionPane.showMessageDialog(null,"Ese usuario ya esta en uso, redirigiendo al menu de inicio...");
+        this.dispose();
+        pantallaInicio.setVisible(true);
+        }
+        else if(!passwordValida){
+        JOptionPane.showMessageDialog(null, "Password no cumple con el requisito de 8 caracteres, redirigiendo al menu de inicio...");
+        this.dispose();
+        pantallaInicio.setVisible(true);
+        }   
+        else{
+        JOptionPane.showMessageDialog(null, "Datos invalidos");
+        this.dispose();
+        pantallaInicio.setVisible(true);
+                
+         }
+        
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event_btncrearPerfilActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,10 +273,9 @@ public class crearplayerMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btncrearPassword;
-    private javax.swing.JButton btncrearUsuario1;
-    private javax.swing.JTextField crearUsuario;
-    private javax.swing.JTextField crearUsuario1;
+    private javax.swing.JButton btncrearPerfil;
+    private javax.swing.JTextField fieldcrearPassword;
+    private javax.swing.JTextField fieldcrearUsuario;
     private javax.swing.JTextField loginUsuario;
     private javax.swing.JTextField passwordCrear;
     private javax.swing.JTextField tituloCrearplayer;
