@@ -1,5 +1,6 @@
 
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -14,6 +15,9 @@ public class funciones {
     static loginMenu loginMenu = new loginMenu();
     static crearplayerMenu crearplayerMenu = new crearplayerMenu();
     public static int posicionUsuario = -1;
+    static menuPrincipal menuPrincipal = new menuPrincipal();
+    static perfilMenu perfilMenu = new perfilMenu();
+    
     
     public static int validarPosicion (String[][] usuariosInfo, String usuarioBusqueda){
         for(int i=0;i<usuariosInfo[0].length;i++){
@@ -48,8 +52,23 @@ public class funciones {
     player.setUsuariosInfo(usuariosconCreados);
     JOptionPane.showMessageDialog(null,"Usuario creado exitosamente!");
     
+    player.setUsuario(usuarioBusqueda);
+    player.setPassword(passwordBusqueda);
+    
     }
+  
+  public static void mostrarPanel (JPanel panelContenido, JPanel panel){
+      
+        panel.setSize(panelContenido.getWidth(),panelContenido.getHeight());
+        
+        panelContenido.removeAll();
+        panelContenido.add(panel);
+        panelContenido.revalidate();
+        panelContenido.repaint();
+  
+  
+  }
     
-    
+ 
     
 }

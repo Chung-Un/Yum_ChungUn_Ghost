@@ -22,7 +22,8 @@ public class crearplayerMenu extends javax.swing.JFrame {
    static player player = new player();
    pantallaInicio pantallaInicio = new pantallaInicio();
    funciones funciones = new funciones();
-    
+   menuPrincipal menuPrincipal = new menuPrincipal();
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -199,7 +200,6 @@ public class crearplayerMenu extends javax.swing.JFrame {
     private void btncrearPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncrearPerfilActionPerformed
         // TODO add your handling code here:
         String usuarioBusqueda,passwordBusqueda; 
-        int posicionUsuario=0;
         boolean passwordValida=true;
         usuarioBusqueda = fieldcrearUsuario.getText();
         passwordBusqueda = fieldcrearPassword.getText();
@@ -207,13 +207,13 @@ public class crearplayerMenu extends javax.swing.JFrame {
         funciones.validarPosicion(player.getUsuariosInfo(),usuarioBusqueda);
         funciones.validarPassword(passwordBusqueda);
         
-        if(posicionUsuario==-1 && passwordValida){
+        if(funciones.posicionUsuario==-1 && passwordValida){
         funciones.crearPlayer(player,usuarioBusqueda,passwordBusqueda);
-        player.setUsuario(usuarioBusqueda);
-        player.setPassword(passwordBusqueda);
+        
         this.dispose();
+        menuPrincipal.setVisible(true);
         }
-        else if(posicionUsuario>-1){
+        else if(funciones.posicionUsuario>-1){
         JOptionPane.showMessageDialog(null,"Ese usuario ya esta en uso, redirigiendo al menu de inicio...");
         this.dispose();
         pantallaInicio.setVisible(true);
@@ -230,7 +230,7 @@ public class crearplayerMenu extends javax.swing.JFrame {
                 
          }
         
-        }
+        
         
         
         

@@ -1,68 +1,21 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package yum_chungun_ghost1;
 
-import java.util.HashSet;
 import java.util.Scanner;
 
 /**
  *
  * @author chung
  */
-public class Yum_ChungUn_Ghost1 {
+public class GhostMain {
+    static Player player = new Player();
+    static funcionesGenerales funciones= new funcionesGenerales(); 
     
-   static Player player = new Player();
-
-    
-   public static int validarUsuario(String usuarioBusqueda,String[][] usuariosInfo ){
-    int posicionUsuario=-1;
-    
-    for(int i=0;i<player.getUsuariosInfo()[0].length;i++){
-    if(usuarioBusqueda.equals(player.getUsuariosInfo()[0][i])){
-    posicionUsuario = i;
-    break;
-    }
-    }
-    return posicionUsuario;  
-    }
-    
-    public static void validarPassword(String passwordBusqueda){
-    boolean passwordValida;
-    passwordValida = (passwordBusqueda.length()==8);
-    
-    if(passwordValida){
-    System.out.println("Password valida\nCreacion de perfil exitosa.");
-    player.setPassword(passwordBusqueda);
-    }
-    else{
-    System.out.println("Esa password no cumple con el requisito de 8 caracteres");
-    }   
-    
-    }
-   
-    public static void rankingJugadores(){
-    int temp;
-    
-    for(int i=0 ; i< player.getUsuariosPuntos().length;i++){
-    for(int x=1; x < player.getUsuariosPuntos().length;x++){
-        if(player.getUsuariosPuntos()[x-1]>= player.getUsuariosPuntos()[x]){
-        temp= player.getUsuariosPuntos()[x];
-        player.getUsuariosPuntos()[x] = player.getUsuariosPuntos()[x-1];
-        player.getUsuariosPuntos()[x-1] = temp;
-    }
-    }
-    }
-    
-    
-    
-    
-    }
-   
-    
-    public static void main(String[] args) {
-     Scanner entrada = new Scanner(System.in);
+    public static void main (String []args){
+    Scanner entrada = new Scanner(System.in);
         int opcionUsuario=0, posicionUsuario=0;
         String usuarioBusqueda="", passwordBusqueda="";
         
@@ -79,7 +32,7 @@ public class Yum_ChungUn_Ghost1 {
                 System.out.println("--->Login\nIngrese su usuario:");
                 usuarioBusqueda=entrada.next();
                 
-                 posicionUsuario = validarUsuario(usuarioBusqueda,player.getUsuariosInfo());
+                 posicionUsuario = funciones.validarUsuario(player,usuarioBusqueda,player.getUsuariosInfo());
                 
                 if(posicionUsuario>=0){
                 player.setUsuario(usuarioBusqueda);
@@ -109,7 +62,7 @@ public class Yum_ChungUn_Ghost1 {
                 
                 System.out.println("-->Crear Player\nIngrese un nombre de usuario sin espacios:");
                 usuarioBusqueda = entrada.next();
-                posicionUsuario = validarUsuario(usuarioBusqueda,player.getUsuariosInfo());
+                posicionUsuario = funciones.validarUsuario(player,usuarioBusqueda,player.getUsuariosInfo());
                 
                 if(posicionUsuario==-1){
                 player.setUsuario(usuarioBusqueda);
@@ -117,7 +70,7 @@ public class Yum_ChungUn_Ghost1 {
                 System.out.println("Ingrese una password de 8 caracteres:");
                 passwordBusqueda = entrada.next(); 
                 
-                validarPassword(passwordBusqueda);
+                funciones.validarPassword(player,passwordBusqueda);
                         
                 }
                 else{
@@ -187,6 +140,6 @@ public class Yum_ChungUn_Ghost1 {
         
         
         }}
-        
     
-
+    
+   

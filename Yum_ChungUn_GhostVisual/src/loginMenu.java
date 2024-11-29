@@ -8,19 +8,14 @@
  * @author chung
  */
 
-import java.util.HashSet;
 import javax.swing.*;
 
 public class loginMenu extends javax.swing.JFrame {
-
-String[][] usuariosInfo = {{"chungun23","pollochuco24","mellzx","juanCarlos","spookyscaryskeleton","ghostmaster",},
-                                    {"mcr4ever","pollochu","gatos001","perry123","hallowee","soymejor",}, 
-                                    {"10","13","7","2","23","60",}};
-    
-    
+    menuPrincipal menuPrincipal = new menuPrincipal();
     public static int posicionUsuario = -1;
     public String usuarioBusqueda;
-    player player = new player();
+    public String passwordBusqueda;
+    static player player = new player();
     funciones funciones = new funciones();
     pantallaInicio pantallaInicio = new pantallaInicio();
     /**
@@ -41,24 +36,27 @@ String[][] usuariosInfo = {{"chungun23","pollochuco24","mellzx","juanCarlos","sp
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnOkUsuario = new javax.swing.JButton();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
         login = new javax.swing.JTextField();
         usuarioRegistro = new javax.swing.JTextField();
         loginUsuario = new javax.swing.JTextField();
         loginPassword = new javax.swing.JTextField();
-        btnOkPassword = new javax.swing.JButton();
+        btnOkLogin = new javax.swing.JButton();
+
+        jInternalFrame1.setVisible(true);
+
+        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
+        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
+        jInternalFrame1Layout.setHorizontalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jInternalFrame1Layout.setVerticalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        btnOkUsuario.setBackground(new java.awt.Color(0, 0, 0));
-        btnOkUsuario.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        btnOkUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        btnOkUsuario.setText("Ok");
-        btnOkUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOkUsuarioActionPerformed(evt);
-            }
-        });
 
         login.setBackground(new java.awt.Color(0, 0, 0));
         login.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
@@ -96,13 +94,13 @@ String[][] usuariosInfo = {{"chungun23","pollochuco24","mellzx","juanCarlos","sp
             }
         });
 
-        btnOkPassword.setBackground(new java.awt.Color(0, 0, 0));
-        btnOkPassword.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
-        btnOkPassword.setForeground(new java.awt.Color(255, 255, 255));
-        btnOkPassword.setText("Ok");
-        btnOkPassword.addActionListener(new java.awt.event.ActionListener() {
+        btnOkLogin.setBackground(new java.awt.Color(0, 0, 0));
+        btnOkLogin.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        btnOkLogin.setForeground(new java.awt.Color(255, 255, 255));
+        btnOkLogin.setText("Ok");
+        btnOkLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOkPasswordActionPerformed(evt);
+                btnOkLoginActionPerformed(evt);
             }
         });
 
@@ -111,17 +109,11 @@ String[][] usuariosInfo = {{"chungun23","pollochuco24","mellzx","juanCarlos","sp
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(35, 35, 35)
                 .addComponent(loginUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addComponent(loginPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(btnOkUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnOkPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -129,8 +121,11 @@ String[][] usuariosInfo = {{"chungun23","pollochuco24","mellzx","juanCarlos","sp
                         .addComponent(usuarioRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(146, 146, 146)
-                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(69, Short.MAX_VALUE))
+                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(152, 152, 152)
+                        .addComponent(btnOkLogin)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,36 +138,13 @@ String[][] usuariosInfo = {{"chungun23","pollochuco24","mellzx","juanCarlos","sp
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(loginUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(loginPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnOkUsuario)
-                    .addComponent(btnOkPassword))
-                .addGap(94, 94, 94))
+                .addGap(33, 33, 33)
+                .addComponent(btnOkLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnOkUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkUsuarioActionPerformed
-        // TODO add your handling code here
-        usuarioBusqueda = loginUsuario.getText();  
-        
-        funciones.validarPosicion(usuariosInfo,usuarioBusqueda);
-        
-        if(posicionUsuario>=0){
-            JOptionPane.showMessageDialog(null, "Usuario encontrado!");
-            player.setUsuario(usuarioBusqueda);
-            
-            
-             
-            }
-        else{
-            JOptionPane.showMessageDialog(null,"Usuario no encontrado, redirigiendo al menu de inicio...");  
-            this.dispose();
-            pantallaInicio.setVisible(true);
-            }
-        
-    }//GEN-LAST:event_btnOkUsuarioActionPerformed
 
     private void usuarioRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioRegistroActionPerformed
         // TODO add your handling code here:
@@ -186,20 +158,34 @@ String[][] usuariosInfo = {{"chungun23","pollochuco24","mellzx","juanCarlos","sp
         // TODO add your handling code here:
     }//GEN-LAST:event_loginPasswordActionPerformed
 
-    private void btnOkPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkPasswordActionPerformed
+    private void btnOkLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkLoginActionPerformed
         // TODO add your handling code here:
-        String passwordBusqueda = loginPassword.getText();
+        usuarioBusqueda = loginUsuario.getText();
+        passwordBusqueda = loginPassword.getText();
         
+        funciones.validarPosicion(player.usuariosInfo,usuarioBusqueda);
+        
+        if(posicionUsuario>=0){
+            JOptionPane.showMessageDialog(null, "Usuario encontrado!");
+            player.setUsuario(usuarioBusqueda);
+            System.out.print(player.getUsuario() + " . " + player.usuario);
+            
+             
+            }
+        else{
+            JOptionPane.showMessageDialog(null,"Usuario no encontrado, redirigiendo al menu de inicio...");  
+            this.dispose();
+            pantallaInicio.setVisible(true);
+            }
         
         if(posicionUsuario == -1){
                 JOptionPane.showMessageDialog(null, "Aun no ha validado ningun usuario.");
         }
-        else if(passwordBusqueda.equals(usuariosInfo[1][posicionUsuario])){
+        else if(passwordBusqueda.equals(player.usuariosInfo[1][posicionUsuario])){
                 player.setPassword(passwordBusqueda);
                 JOptionPane.showMessageDialog(null,"Bienvenido " + usuarioBusqueda);
                 this.dispose();
-                
-                
+                menuPrincipal.setVisible(true);
                 }
        
         
@@ -209,7 +195,7 @@ String[][] usuariosInfo = {{"chungun23","pollochuco24","mellzx","juanCarlos","sp
                 pantallaInicio.setVisible(true);
                 }
         
-    }//GEN-LAST:event_btnOkPasswordActionPerformed
+    }//GEN-LAST:event_btnOkLoginActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
@@ -251,8 +237,8 @@ String[][] usuariosInfo = {{"chungun23","pollochuco24","mellzx","juanCarlos","sp
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnOkPassword;
-    private javax.swing.JButton btnOkUsuario;
+    private javax.swing.JButton btnOkLogin;
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JTextField login;
     private javax.swing.JTextField loginPassword;
     private javax.swing.JTextField loginUsuario;
